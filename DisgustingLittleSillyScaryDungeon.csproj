@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Artefacts\Artefact.cs" />
+    <Compile Include="Artefacts\Hammer.cs" />
+    <Compile Include="Artefacts\Mace.cs" />
+    <Compile Include="Artefacts\Shield.cs" />
+    <Compile Include="Artefacts\Sword.cs" />
+    <Compile Include="Artefacts\SwordType.cs" />
     <Compile Include="Characters\Monsters\Bandit.cs" />
     <Compile Include="Characters\Monsters\BossMan.cs" />
     <Compile Include="Characters\Monsters\FluffyBunny.cs" />

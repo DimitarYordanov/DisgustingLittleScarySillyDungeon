@@ -20,3 +20,12 @@ C:\Users\Dimitar\Desktop\Project\bin\Debug\DisgustingLittleSillyScaryDungeon.exe
 C:\Users\Dimitar\Desktop\Project\bin\Debug\DisgustingLittleSillyScaryDungeon.pdb
 C:\Users\Dimitar\Desktop\Project\obj\Debug\DisgustingLittleSillyScaryDungeon.exe
 C:\Users\Dimitar\Desktop\Project\obj\Debug\DisgustingLittleSillyScaryDungeon.pdb
+D:\IT\Telerik\Alpha\Module1\OOP-project\TeamProject\TelerikAlphaAcademy\bin\Debug\DisgustingLittleSillyScaryDungeon.exe.config
+D:\IT\Telerik\Alpha\Module1\OOP-project\TeamProject\TelerikAlphaAcademy\bin\Debug\DisgustingLittleSillyScaryDungeon.exe
+D:\IT\Telerik\Alpha\Module1\OOP-project\TeamProject\TelerikAlphaAcademy\bin\Debug\DisgustingLittleSillyScaryDungeon.pdb
+D:\IT\Telerik\Alpha\Module1\OOP-project\TeamProject\TelerikAlphaAcademy\obj\Debug\DisgustingLittleSillyScaryDungeon.csprojResolveAssemblyReference.cache
+D:\IT\Telerik\Alpha\Module1\OOP-project\TeamProject\TelerikAlphaAcademy\obj\Debug\DisgustingLittleSillyScaryDungeon.DisgustingLittleSillyScaryDungeon.resources
+D:\IT\Telerik\Alpha\Module1\OOP-project\TeamProject\TelerikAlphaAcademy\obj\Debug\DisgustingLittleSillyScaryDungeon.Properties.Resources.resources
+D:\IT\Telerik\Alpha\Module1\OOP-project\TeamProject\TelerikAlphaAcademy\obj\Debug\DisgustingLittleSillyScaryDungeon.csproj.GenerateResource.Cache
+D:\IT\Telerik\Alpha\Module1\OOP-project\TeamProject\TelerikAlphaAcademy\obj\Debug\DisgustingLittleSillyScaryDungeon.exe
+D:\IT\Telerik\Alpha\Module1\OOP-project\TeamProject\TelerikAlphaAcademy\obj\Debug\DisgustingLittleSillyScaryDungeon.pdb
