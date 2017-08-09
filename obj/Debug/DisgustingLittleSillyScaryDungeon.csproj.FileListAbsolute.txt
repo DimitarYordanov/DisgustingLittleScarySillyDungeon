@@ -11,3 +11,12 @@ C:\Users\Dimitar\Desktop\Proj\obj\Debug\DisgustingLittleSillyScaryDungeon.csproj
 C:\Users\Dimitar\Desktop\Proj\obj\Debug\DisgustingLittleSillyScaryDungeon.DisgustingLittleSillyScaryDungeon.resources
 C:\Users\Dimitar\Desktop\Proj\obj\Debug\DisgustingLittleSillyScaryDungeon.Properties.Resources.resources
 C:\Users\Dimitar\Desktop\Proj\obj\Debug\DisgustingLittleSillyScaryDungeon.csproj.GenerateResource.Cache
+C:\Users\Dimitar\Desktop\Project\obj\Debug\DisgustingLittleSillyScaryDungeon.csprojResolveAssemblyReference.cache
+C:\Users\Dimitar\Desktop\Project\obj\Debug\DisgustingLittleSillyScaryDungeon.DisgustingLittleSillyScaryDungeon.resources
+C:\Users\Dimitar\Desktop\Project\obj\Debug\DisgustingLittleSillyScaryDungeon.Properties.Resources.resources
+C:\Users\Dimitar\Desktop\Project\obj\Debug\DisgustingLittleSillyScaryDungeon.csproj.GenerateResource.Cache
+C:\Users\Dimitar\Desktop\Project\bin\Debug\DisgustingLittleSillyScaryDungeon.exe.config
+C:\Users\Dimitar\Desktop\Project\bin\Debug\DisgustingLittleSillyScaryDungeon.exe
+C:\Users\Dimitar\Desktop\Project\bin\Debug\DisgustingLittleSillyScaryDungeon.pdb
+C:\Users\Dimitar\Desktop\Project\obj\Debug\DisgustingLittleSillyScaryDungeon.exe
+C:\Users\Dimitar\Desktop\Project\obj\Debug\DisgustingLittleSillyScaryDungeon.pdb

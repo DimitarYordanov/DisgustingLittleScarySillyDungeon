@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GroupProject.Positioning;
-using GroupProject.Common.Enums;
+using DisgustingLittleSillyScaryDungeon.Positioning;
+using DisgustingLittleSillyScaryDungeon.Common.Enums;
 
-namespace GroupProject.Interfaces
+namespace DisgustingLittleSillyScaryDungeon.Interfaces
 {
     public interface IMonster
     {

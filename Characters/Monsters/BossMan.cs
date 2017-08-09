@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GroupProject.Interfaces;
-using GroupProject.Positioning;
-using GroupProject.Common.Enums;
+using DisgustingLittleSillyScaryDungeon.Interfaces;
+using DisgustingLittleSillyScaryDungeon.Positioning;
+using DisgustingLittleSillyScaryDungeon.Common.Enums;
 
-namespace GroupProject.Characters.Monsters
+namespace DisgustingLittleSillyScaryDungeon.Characters.Monsters
 {
     public class BossMan : Monster
     {
