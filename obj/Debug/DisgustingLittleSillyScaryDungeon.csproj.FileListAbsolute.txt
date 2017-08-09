@@ -7,3 +7,7 @@ c:\users\lazar\documents\visual studio 2017\Projects\DisgustingLittleSillyScaryD
 c:\users\lazar\documents\visual studio 2017\Projects\DisgustingLittleSillyScaryDungeon\DisgustingLittleSillyScaryDungeon\obj\Debug\DisgustingLittleSillyScaryDungeon.csproj.GenerateResource.Cache
 c:\users\lazar\documents\visual studio 2017\Projects\DisgustingLittleSillyScaryDungeon\DisgustingLittleSillyScaryDungeon\obj\Debug\DisgustingLittleSillyScaryDungeon.exe
 c:\users\lazar\documents\visual studio 2017\Projects\DisgustingLittleSillyScaryDungeon\DisgustingLittleSillyScaryDungeon\obj\Debug\DisgustingLittleSillyScaryDungeon.pdb
+C:\Users\Dimitar\Desktop\Proj\obj\Debug\DisgustingLittleSillyScaryDungeon.csprojResolveAssemblyReference.cache
+C:\Users\Dimitar\Desktop\Proj\obj\Debug\DisgustingLittleSillyScaryDungeon.DisgustingLittleSillyScaryDungeon.resources
+C:\Users\Dimitar\Desktop\Proj\obj\Debug\DisgustingLittleSillyScaryDungeon.Properties.Resources.resources
+C:\Users\Dimitar\Desktop\Proj\obj\Debug\DisgustingLittleSillyScaryDungeon.csproj.GenerateResource.Cache
