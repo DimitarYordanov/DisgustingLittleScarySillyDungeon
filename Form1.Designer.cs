@@ -31,6 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.battlePanel = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.fullHealthBarEnemy = new System.Windows.Forms.PictureBox();
+            this.emptyHealthBarEnemy = new System.Windows.Forms.PictureBox();
+            this.fullHealthBarPlayer = new System.Windows.Forms.PictureBox();
+            this.emptyHealthBarPlayer = new System.Windows.Forms.PictureBox();
+            this.pictureBox134 = new System.Windows.Forms.PictureBox();
+            this.pictureBox133 = new System.Windows.Forms.PictureBox();
             this.player = new System.Windows.Forms.PictureBox();
             this.pictureBox132 = new System.Windows.Forms.PictureBox();
             this.pictureBox131 = new System.Windows.Forms.PictureBox();
@@ -170,15 +178,14 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.battlePanel = new System.Windows.Forms.Panel();
-            this.pictureBox133 = new System.Windows.Forms.PictureBox();
-            this.pictureBox134 = new System.Windows.Forms.PictureBox();
-            this.emptyHealthBarPlayer = new System.Windows.Forms.PictureBox();
-            this.fullHealthBarPlayer = new System.Windows.Forms.PictureBox();
-            this.emptyHealthBarEnemy = new System.Windows.Forms.PictureBox();
-            this.fullHealthBarEnemy = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.battlePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fullHealthBarEnemy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptyHealthBarEnemy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullHealthBarPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptyHealthBarPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox134)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox133)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox132)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox131)).BeginInit();
@@ -314,13 +321,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.battlePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox133)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox134)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptyHealthBarPlayer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fullHealthBarPlayer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptyHealthBarEnemy)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fullHealthBarEnemy)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -471,6 +471,89 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1080, 704);
             this.panel1.TabIndex = 0;
+            // 
+            // battlePanel
+            // 
+            this.battlePanel.Controls.Add(this.button2);
+            this.battlePanel.Controls.Add(this.fullHealthBarEnemy);
+            this.battlePanel.Controls.Add(this.emptyHealthBarEnemy);
+            this.battlePanel.Controls.Add(this.fullHealthBarPlayer);
+            this.battlePanel.Controls.Add(this.emptyHealthBarPlayer);
+            this.battlePanel.Controls.Add(this.pictureBox134);
+            this.battlePanel.Controls.Add(this.pictureBox133);
+            this.battlePanel.Enabled = false;
+            this.battlePanel.Location = new System.Drawing.Point(380, 200);
+            this.battlePanel.Name = "battlePanel";
+            this.battlePanel.Size = new System.Drawing.Size(320, 320);
+            this.battlePanel.TabIndex = 136;
+            this.battlePanel.Visible = false;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(106, 277);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 142;
+            this.button2.Text = "Attack";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // fullHealthBarEnemy
+            // 
+            this.fullHealthBarEnemy.BackColor = System.Drawing.Color.Lime;
+            this.fullHealthBarEnemy.Location = new System.Drawing.Point(217, 11);
+            this.fullHealthBarEnemy.Name = "fullHealthBarEnemy";
+            this.fullHealthBarEnemy.Size = new System.Drawing.Size(100, 20);
+            this.fullHealthBarEnemy.TabIndex = 141;
+            this.fullHealthBarEnemy.TabStop = false;
+            // 
+            // emptyHealthBarEnemy
+            // 
+            this.emptyHealthBarEnemy.BackColor = System.Drawing.Color.Red;
+            this.emptyHealthBarEnemy.Location = new System.Drawing.Point(217, 11);
+            this.emptyHealthBarEnemy.Name = "emptyHealthBarEnemy";
+            this.emptyHealthBarEnemy.Size = new System.Drawing.Size(100, 20);
+            this.emptyHealthBarEnemy.TabIndex = 140;
+            this.emptyHealthBarEnemy.TabStop = false;
+            // 
+            // fullHealthBarPlayer
+            // 
+            this.fullHealthBarPlayer.BackColor = System.Drawing.Color.Lime;
+            this.fullHealthBarPlayer.Location = new System.Drawing.Point(3, 237);
+            this.fullHealthBarPlayer.Name = "fullHealthBarPlayer";
+            this.fullHealthBarPlayer.Size = new System.Drawing.Size(100, 20);
+            this.fullHealthBarPlayer.TabIndex = 139;
+            this.fullHealthBarPlayer.TabStop = false;
+            this.fullHealthBarPlayer.Resize += new System.EventHandler(this.fullHealthBarPlayer_Resize);
+            // 
+            // emptyHealthBarPlayer
+            // 
+            this.emptyHealthBarPlayer.BackColor = System.Drawing.Color.Red;
+            this.emptyHealthBarPlayer.Location = new System.Drawing.Point(3, 237);
+            this.emptyHealthBarPlayer.Name = "emptyHealthBarPlayer";
+            this.emptyHealthBarPlayer.Size = new System.Drawing.Size(100, 20);
+            this.emptyHealthBarPlayer.TabIndex = 138;
+            this.emptyHealthBarPlayer.TabStop = false;
+            // 
+            // pictureBox134
+            // 
+            this.pictureBox134.Image = global::DisgustingLittleSillyScaryDungeon.Properties.Resources._10;
+            this.pictureBox134.Location = new System.Drawing.Point(262, 37);
+            this.pictureBox134.Name = "pictureBox134";
+            this.pictureBox134.Size = new System.Drawing.Size(54, 54);
+            this.pictureBox134.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox134.TabIndex = 137;
+            this.pictureBox134.TabStop = false;
+            // 
+            // pictureBox133
+            // 
+            this.pictureBox133.Image = global::DisgustingLittleSillyScaryDungeon.Properties.Resources._3;
+            this.pictureBox133.Location = new System.Drawing.Point(4, 263);
+            this.pictureBox133.Name = "pictureBox133";
+            this.pictureBox133.Size = new System.Drawing.Size(54, 54);
+            this.pictureBox133.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox133.TabIndex = 136;
+            this.pictureBox133.TabStop = false;
             // 
             // player
             // 
@@ -1864,89 +1947,6 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // battlePanel
-            // 
-            this.battlePanel.Controls.Add(this.button2);
-            this.battlePanel.Controls.Add(this.fullHealthBarEnemy);
-            this.battlePanel.Controls.Add(this.emptyHealthBarEnemy);
-            this.battlePanel.Controls.Add(this.fullHealthBarPlayer);
-            this.battlePanel.Controls.Add(this.emptyHealthBarPlayer);
-            this.battlePanel.Controls.Add(this.pictureBox134);
-            this.battlePanel.Controls.Add(this.pictureBox133);
-            this.battlePanel.Enabled = false;
-            this.battlePanel.Location = new System.Drawing.Point(380, 200);
-            this.battlePanel.Name = "battlePanel";
-            this.battlePanel.Size = new System.Drawing.Size(320, 320);
-            this.battlePanel.TabIndex = 136;
-            this.battlePanel.Visible = false;
-            // 
-            // pictureBox133
-            // 
-            this.pictureBox133.Image = global::DisgustingLittleSillyScaryDungeon.Properties.Resources._3;
-            this.pictureBox133.Location = new System.Drawing.Point(4, 263);
-            this.pictureBox133.Name = "pictureBox133";
-            this.pictureBox133.Size = new System.Drawing.Size(54, 54);
-            this.pictureBox133.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox133.TabIndex = 136;
-            this.pictureBox133.TabStop = false;
-            // 
-            // pictureBox134
-            // 
-            this.pictureBox134.Image = global::DisgustingLittleSillyScaryDungeon.Properties.Resources._10;
-            this.pictureBox134.Location = new System.Drawing.Point(262, 37);
-            this.pictureBox134.Name = "pictureBox134";
-            this.pictureBox134.Size = new System.Drawing.Size(54, 54);
-            this.pictureBox134.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox134.TabIndex = 137;
-            this.pictureBox134.TabStop = false;
-            // 
-            // emptyHealthBarPlayer
-            // 
-            this.emptyHealthBarPlayer.BackColor = System.Drawing.Color.Red;
-            this.emptyHealthBarPlayer.Location = new System.Drawing.Point(3, 237);
-            this.emptyHealthBarPlayer.Name = "emptyHealthBarPlayer";
-            this.emptyHealthBarPlayer.Size = new System.Drawing.Size(100, 20);
-            this.emptyHealthBarPlayer.TabIndex = 138;
-            this.emptyHealthBarPlayer.TabStop = false;
-            // 
-            // fullHealthBarPlayer
-            // 
-            this.fullHealthBarPlayer.BackColor = System.Drawing.Color.Lime;
-            this.fullHealthBarPlayer.Location = new System.Drawing.Point(3, 237);
-            this.fullHealthBarPlayer.Name = "fullHealthBarPlayer";
-            this.fullHealthBarPlayer.Size = new System.Drawing.Size(100, 20);
-            this.fullHealthBarPlayer.TabIndex = 139;
-            this.fullHealthBarPlayer.TabStop = false;
-            this.fullHealthBarPlayer.Resize += new System.EventHandler(this.fullHealthBarPlayer_Resize);
-            // 
-            // emptyHealthBarEnemy
-            // 
-            this.emptyHealthBarEnemy.BackColor = System.Drawing.Color.Red;
-            this.emptyHealthBarEnemy.Location = new System.Drawing.Point(217, 11);
-            this.emptyHealthBarEnemy.Name = "emptyHealthBarEnemy";
-            this.emptyHealthBarEnemy.Size = new System.Drawing.Size(100, 20);
-            this.emptyHealthBarEnemy.TabIndex = 140;
-            this.emptyHealthBarEnemy.TabStop = false;
-            // 
-            // fullHealthBarEnemy
-            // 
-            this.fullHealthBarEnemy.BackColor = System.Drawing.Color.Lime;
-            this.fullHealthBarEnemy.Location = new System.Drawing.Point(217, 11);
-            this.fullHealthBarEnemy.Name = "fullHealthBarEnemy";
-            this.fullHealthBarEnemy.Size = new System.Drawing.Size(100, 20);
-            this.fullHealthBarEnemy.TabIndex = 141;
-            this.fullHealthBarEnemy.TabStop = false;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(106, 277);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 142;
-            this.button2.Text = "Attack";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // DisgustingLittleSillyScaryDungeon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1960,6 +1960,13 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DisgustingLittleSillyScaryDungeon_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DisgustingLittleSillyScaryDungeon_KeyUp);
             this.panel1.ResumeLayout(false);
+            this.battlePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.fullHealthBarEnemy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptyHealthBarEnemy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullHealthBarPlayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptyHealthBarPlayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox134)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox133)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox132)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox131)).EndInit();
@@ -2096,13 +2103,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.battlePanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox133)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox134)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptyHealthBarPlayer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fullHealthBarPlayer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptyHealthBarEnemy)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fullHealthBarEnemy)).EndInit();
             this.ResumeLayout(false);
 
         }

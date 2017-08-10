@@ -462,31 +462,66 @@ namespace DisgustingLittleSillyScaryDungeon
                 if (enemies[i].XCoord == this.current.XCoord
                     && enemies[i].YCoord == this.current.YCoord)
                 {
+
+                    if (enemies1[i] == pictureBox129)
+                    {
+                        this.pictureBox134.Image = Resources._10;
+                    }
+
+                    if (enemies1[i] == pictureBox130)
+                    {
+                        this.pictureBox134.Image = Resources._11;
+                    }
+
+                    if (enemies1[i] == pictureBox131)
+                    {
+                        this.pictureBox134.Image = Resources._12;
+                    }
+
+                    if (enemies1[i] == pictureBox132)
+                    {
+                        this.pictureBox134.Image = Resources._13;
+                    }
+
                     this.battlePanel.Visible = true;
                     this.battlePanel.Enabled = true;
                     this.battlePanel.Focus();
+                    Thread.Sleep(2000);
 
+                    
+
+                    this.fullHealthBarPlayer.Width = this.playerHero.Health;
                     this.emptyHealthBarPlayer.Width = this.playerHero.Health;
 
+                    this.fullHealthBarEnemy.Width = this.enemies2[i].Health;
                     this.emptyHealthBarEnemy.Width = this.enemies2[i].Health;
 
-                    while (this.playerHero.Health > 0 && this.enemies2[i].Health > 0)
+
+                    while (this.fullHealthBarEnemy.Width > 0 && fullHealthBarPlayer.Width > 0)
                     {
-                        this.enemies2[i].Health -= this.playerHero.Attack;
-                        this.playerHero.Health -= this.enemies2[i].MaxDamage;
+                        //this.enemies2[i].Health -= 10;
 
-                        this.fullHealthBarEnemy.Width = this.enemies2[i].Health;
-                        Thread.Sleep(100);
+                        
 
-                        this.fullHealthBarPlayer.Width = this.playerHero.Health;
-                        Thread.Sleep(100);
+                        this.fullHealthBarEnemy.Width -= 10;
+                        Thread.Sleep(500);
+
+                        this.fullHealthBarPlayer.Width -= 10;
+                        Thread.Sleep(500);
+
+                        
                     }
+
+                    this.fullHealthBarPlayer.Width = this.playerHero.Health;
+                    this.emptyHealthBarPlayer.Width = this.playerHero.Health;
+
+                    this.battlePanel.Visible = false;
+                    this.battlePanel.Enabled = false;
 
                     enemies1[i].Left += 1000;
                     enemies[i].XCoord += 1000;
 
-                    this.battlePanel.Visible = false;
-                    this.battlePanel.Enabled = false;
+                    
                 }
             }
 
