@@ -12,12 +12,11 @@ namespace DisgustingLittleSillyScaryDungeon.Characters.Monsters
     public class Bandit : Monster
     {
         public Bandit(
-                    Position position,
                     int health = 45,
                     int maxDamage = 20,
                     int defence = 10,
                     string battlecry = "Your gold is mine, pup!")
-            : base(health, maxDamage, position, defence, battlecry)
+            : base(health, maxDamage, defence, battlecry)
         {
 
         }

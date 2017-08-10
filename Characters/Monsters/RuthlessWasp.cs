@@ -11,13 +11,12 @@ namespace DisgustingLittleSillyScaryDungeon.Characters.Monsters
 {
     public class RuthlessWasp : Monster
     {
-        public RuthlessWasp(
-                    Position position,
+        public RuthlessWasp(                    
                     int health = 35,
                     int maxDamage = 15,
                     int defence = 7,
                     string battlecry = "BzzzZZZzzt")
-            : base(health, maxDamage, position, defence, battlecry)
+            : base(health, maxDamage, defence, battlecry)
         {
 
         }

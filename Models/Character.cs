@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DisgustingLittleSillyScaryDungeon.Artefacts;
+using DisgustingLittleSillyScaryDungeon.Heroes.Contracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +17,7 @@ namespace DisgustingLittleSillyScaryDungeon.Heroes
         private int agility;
 
         //constructor
-        protected Character(int health, int strength, int intelligence, int agility)
+        public Character(int health, int strength, int intelligence, int agility)
         {
             this.Health = health;
             this.Strength = strength;
@@ -71,29 +73,11 @@ namespace DisgustingLittleSillyScaryDungeon.Heroes
                 this.agility = value;
             }
         }
+
         //methods
 
-        protected virtual int GetAttackPoints()
-        {
-            var atackPoints = (this.Strength + this.Agility) / this.Intelligence;
-            return atackPoints;
-        }
+        public abstract void GetAttackPoints(Artefact artefact);
 
-        protected virtual int GetDefencePoints()
-        {
-            var defencePoints = this.Agility + (this.Strength / 2);
-            return defencePoints;
-        }
-
-        protected virtual int GetAttackPointsFromWeapon()
-        {
-            var atackPoints = (this.Strength + this.Agility) / this.Intelligence;
-            return atackPoints;
-        }
-        protected virtual int GetDefencePointsFrom()
-        {
-            var defencePoints = this.Agility + (this.Strength / 2);
-            return defencePoints;
-        }
+        public abstract void GetDefencePoints(Artefact artefact);          
     }
 }

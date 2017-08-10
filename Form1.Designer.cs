@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.player = new System.Windows.Forms.PictureBox();
+            this.pictureBox132 = new System.Windows.Forms.PictureBox();
+            this.pictureBox131 = new System.Windows.Forms.PictureBox();
+            this.pictureBox130 = new System.Windows.Forms.PictureBox();
             this.pictureBox129 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -166,11 +170,19 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox130 = new System.Windows.Forms.PictureBox();
-            this.pictureBox131 = new System.Windows.Forms.PictureBox();
-            this.pictureBox132 = new System.Windows.Forms.PictureBox();
-            this.player = new System.Windows.Forms.PictureBox();
+            this.battlePanel = new System.Windows.Forms.Panel();
+            this.pictureBox133 = new System.Windows.Forms.PictureBox();
+            this.pictureBox134 = new System.Windows.Forms.PictureBox();
+            this.emptyHealthBarPlayer = new System.Windows.Forms.PictureBox();
+            this.fullHealthBarPlayer = new System.Windows.Forms.PictureBox();
+            this.emptyHealthBarEnemy = new System.Windows.Forms.PictureBox();
+            this.fullHealthBarEnemy = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox132)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox131)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox130)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox129)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -302,21 +314,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox130)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox131)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox132)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
+            this.battlePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox133)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox134)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptyHealthBarPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullHealthBarPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptyHealthBarEnemy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullHealthBarEnemy)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::DisgustingLittleSillyScaryDungeon.Properties.Resources._2;
+            this.panel1.Controls.Add(this.battlePanel);
             this.panel1.Controls.Add(this.player);
             this.panel1.Controls.Add(this.pictureBox132);
             this.panel1.Controls.Add(this.pictureBox131);
@@ -456,6 +471,46 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1080, 704);
             this.panel1.TabIndex = 0;
+            // 
+            // player
+            // 
+            this.player.Image = global::DisgustingLittleSillyScaryDungeon.Properties.Resources._3;
+            this.player.Location = new System.Drawing.Point(0, 649);
+            this.player.Name = "player";
+            this.player.Size = new System.Drawing.Size(54, 54);
+            this.player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.player.TabIndex = 135;
+            this.player.TabStop = false;
+            // 
+            // pictureBox132
+            // 
+            this.pictureBox132.Image = global::DisgustingLittleSillyScaryDungeon.Properties.Resources._13;
+            this.pictureBox132.Location = new System.Drawing.Point(972, 325);
+            this.pictureBox132.Name = "pictureBox132";
+            this.pictureBox132.Size = new System.Drawing.Size(54, 54);
+            this.pictureBox132.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox132.TabIndex = 134;
+            this.pictureBox132.TabStop = false;
+            // 
+            // pictureBox131
+            // 
+            this.pictureBox131.Image = global::DisgustingLittleSillyScaryDungeon.Properties.Resources._12;
+            this.pictureBox131.Location = new System.Drawing.Point(864, 55);
+            this.pictureBox131.Name = "pictureBox131";
+            this.pictureBox131.Size = new System.Drawing.Size(54, 54);
+            this.pictureBox131.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox131.TabIndex = 133;
+            this.pictureBox131.TabStop = false;
+            // 
+            // pictureBox130
+            // 
+            this.pictureBox130.Image = global::DisgustingLittleSillyScaryDungeon.Properties.Resources._11;
+            this.pictureBox130.Location = new System.Drawing.Point(108, 217);
+            this.pictureBox130.Name = "pictureBox130";
+            this.pictureBox130.Size = new System.Drawing.Size(54, 54);
+            this.pictureBox130.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox130.TabIndex = 132;
+            this.pictureBox130.TabStop = false;
             // 
             // pictureBox129
             // 
@@ -1809,45 +1864,88 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox130
+            // battlePanel
             // 
-            this.pictureBox130.Image = global::DisgustingLittleSillyScaryDungeon.Properties.Resources._11;
-            this.pictureBox130.Location = new System.Drawing.Point(108, 217);
-            this.pictureBox130.Name = "pictureBox130";
-            this.pictureBox130.Size = new System.Drawing.Size(54, 54);
-            this.pictureBox130.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox130.TabIndex = 132;
-            this.pictureBox130.TabStop = false;
+            this.battlePanel.Controls.Add(this.button2);
+            this.battlePanel.Controls.Add(this.fullHealthBarEnemy);
+            this.battlePanel.Controls.Add(this.emptyHealthBarEnemy);
+            this.battlePanel.Controls.Add(this.fullHealthBarPlayer);
+            this.battlePanel.Controls.Add(this.emptyHealthBarPlayer);
+            this.battlePanel.Controls.Add(this.pictureBox134);
+            this.battlePanel.Controls.Add(this.pictureBox133);
+            this.battlePanel.Enabled = false;
+            this.battlePanel.Location = new System.Drawing.Point(380, 200);
+            this.battlePanel.Name = "battlePanel";
+            this.battlePanel.Size = new System.Drawing.Size(320, 320);
+            this.battlePanel.TabIndex = 136;
+            this.battlePanel.Visible = false;
             // 
-            // pictureBox131
+            // pictureBox133
             // 
-            this.pictureBox131.Image = global::DisgustingLittleSillyScaryDungeon.Properties.Resources._12;
-            this.pictureBox131.Location = new System.Drawing.Point(864, 55);
-            this.pictureBox131.Name = "pictureBox131";
-            this.pictureBox131.Size = new System.Drawing.Size(54, 54);
-            this.pictureBox131.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox131.TabIndex = 133;
-            this.pictureBox131.TabStop = false;
+            this.pictureBox133.Image = global::DisgustingLittleSillyScaryDungeon.Properties.Resources._3;
+            this.pictureBox133.Location = new System.Drawing.Point(4, 263);
+            this.pictureBox133.Name = "pictureBox133";
+            this.pictureBox133.Size = new System.Drawing.Size(54, 54);
+            this.pictureBox133.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox133.TabIndex = 136;
+            this.pictureBox133.TabStop = false;
             // 
-            // pictureBox132
+            // pictureBox134
             // 
-            this.pictureBox132.Image = global::DisgustingLittleSillyScaryDungeon.Properties.Resources._13;
-            this.pictureBox132.Location = new System.Drawing.Point(972, 325);
-            this.pictureBox132.Name = "pictureBox132";
-            this.pictureBox132.Size = new System.Drawing.Size(54, 54);
-            this.pictureBox132.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox132.TabIndex = 134;
-            this.pictureBox132.TabStop = false;
+            this.pictureBox134.Image = global::DisgustingLittleSillyScaryDungeon.Properties.Resources._10;
+            this.pictureBox134.Location = new System.Drawing.Point(262, 37);
+            this.pictureBox134.Name = "pictureBox134";
+            this.pictureBox134.Size = new System.Drawing.Size(54, 54);
+            this.pictureBox134.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox134.TabIndex = 137;
+            this.pictureBox134.TabStop = false;
             // 
-            // player
+            // emptyHealthBarPlayer
             // 
-            this.player.Image = global::DisgustingLittleSillyScaryDungeon.Properties.Resources._3;
-            this.player.Location = new System.Drawing.Point(0, 649);
-            this.player.Name = "player";
-            this.player.Size = new System.Drawing.Size(54, 54);
-            this.player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.player.TabIndex = 135;
-            this.player.TabStop = false;
+            this.emptyHealthBarPlayer.BackColor = System.Drawing.Color.Red;
+            this.emptyHealthBarPlayer.Location = new System.Drawing.Point(3, 237);
+            this.emptyHealthBarPlayer.Name = "emptyHealthBarPlayer";
+            this.emptyHealthBarPlayer.Size = new System.Drawing.Size(100, 20);
+            this.emptyHealthBarPlayer.TabIndex = 138;
+            this.emptyHealthBarPlayer.TabStop = false;
+            // 
+            // fullHealthBarPlayer
+            // 
+            this.fullHealthBarPlayer.BackColor = System.Drawing.Color.Lime;
+            this.fullHealthBarPlayer.Location = new System.Drawing.Point(3, 237);
+            this.fullHealthBarPlayer.Name = "fullHealthBarPlayer";
+            this.fullHealthBarPlayer.Size = new System.Drawing.Size(100, 20);
+            this.fullHealthBarPlayer.TabIndex = 139;
+            this.fullHealthBarPlayer.TabStop = false;
+            this.fullHealthBarPlayer.Resize += new System.EventHandler(this.fullHealthBarPlayer_Resize);
+            // 
+            // emptyHealthBarEnemy
+            // 
+            this.emptyHealthBarEnemy.BackColor = System.Drawing.Color.Red;
+            this.emptyHealthBarEnemy.Location = new System.Drawing.Point(217, 11);
+            this.emptyHealthBarEnemy.Name = "emptyHealthBarEnemy";
+            this.emptyHealthBarEnemy.Size = new System.Drawing.Size(100, 20);
+            this.emptyHealthBarEnemy.TabIndex = 140;
+            this.emptyHealthBarEnemy.TabStop = false;
+            // 
+            // fullHealthBarEnemy
+            // 
+            this.fullHealthBarEnemy.BackColor = System.Drawing.Color.Lime;
+            this.fullHealthBarEnemy.Location = new System.Drawing.Point(217, 11);
+            this.fullHealthBarEnemy.Name = "fullHealthBarEnemy";
+            this.fullHealthBarEnemy.Size = new System.Drawing.Size(100, 20);
+            this.fullHealthBarEnemy.TabIndex = 141;
+            this.fullHealthBarEnemy.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(106, 277);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 142;
+            this.button2.Text = "Attack";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // DisgustingLittleSillyScaryDungeon
             // 
@@ -1862,6 +1960,10 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DisgustingLittleSillyScaryDungeon_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DisgustingLittleSillyScaryDungeon_KeyUp);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox132)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox131)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox130)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox129)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -1994,10 +2096,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox130)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox131)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox132)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
+            this.battlePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox133)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox134)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptyHealthBarPlayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullHealthBarPlayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptyHealthBarEnemy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullHealthBarEnemy)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2145,6 +2250,14 @@
         private System.Windows.Forms.PictureBox pictureBox131;
         private System.Windows.Forms.PictureBox pictureBox130;
         private System.Windows.Forms.PictureBox player;
+        private System.Windows.Forms.Panel battlePanel;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox fullHealthBarEnemy;
+        private System.Windows.Forms.PictureBox emptyHealthBarEnemy;
+        private System.Windows.Forms.PictureBox fullHealthBarPlayer;
+        private System.Windows.Forms.PictureBox emptyHealthBarPlayer;
+        private System.Windows.Forms.PictureBox pictureBox134;
+        private System.Windows.Forms.PictureBox pictureBox133;
     }
 }
 

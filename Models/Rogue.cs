@@ -1,4 +1,5 @@
-﻿using DisgustingLittleSillyScaryDungeon.Heroes.Contracts;
+﻿using DisgustingLittleSillyScaryDungeon.Artefacts;
+using DisgustingLittleSillyScaryDungeon.Heroes.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,8 @@ namespace DisgustingLittleSillyScaryDungeon.Heroes.Models
             : base(health, strength, intelligence, agility)
         {
             this.Cloak = false;
+            this.Attack = (2 * strength + agility) / intelligence;
+            this.Defense = agility / 2 + (strength / 2);
         }
 
         public int Attack
@@ -46,6 +49,16 @@ namespace DisgustingLittleSillyScaryDungeon.Heroes.Models
             {
                 this.cloak = value;
             }
+        }
+
+        public override void GetAttackPoints(Artefact artefact)
+        {
+            this.attack += (2 * artefact.Strentgh + artefact.Agility) / artefact.Intelligence;
+
+        }
+        public override void GetDefencePoints(Artefact artefact)
+        {
+            this.defense += artefact.Agility / 2 + (artefact.Strentgh / 2);
         }
     }
 }

@@ -10,6 +10,11 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DisgustingLittleSillyScaryDungeon.Properties;
+using DisgustingLittleSillyScaryDungeon.Heroes.Models;
+using DisgustingLittleSillyScaryDungeon.Heroes.Contracts;
+using DisgustingLittleSillyScaryDungeon.Artefacts;
+using DisgustingLittleSillyScaryDungeon.Interfaces;
+using DisgustingLittleSillyScaryDungeon.Characters.Monsters;
 
 namespace DisgustingLittleSillyScaryDungeon
 {
@@ -20,11 +25,27 @@ namespace DisgustingLittleSillyScaryDungeon
         bool up;
         bool down;
 
+        Warrior warrior = new Warrior(100, 15, 10, 10);
+        Rogue rogue = new Rogue(100, 10, 10, 15);
+        Mage mage = new Mage(100, 10, 15, 10);
+
+        FluffyBunny fluffBun = new FluffyBunny();
+        RuthlessWasp wasp = new RuthlessWasp();
+        Bandit bandit = new Bandit();
+        BossMan boss = new BossMan();
+
         List<IPoints> obstacles = new List<IPoints>();
         List<IPoints> artefacts = new List<IPoints>();
+        List<Artefact> artefacts1 = new List<Artefact>();
         List<bool> visited = new List<bool>();
+
         List<IPoints> enemies = new List<IPoints>();
-        List<PictureBox> pics = new List<PictureBox>(); 
+        List<PictureBox> enemies1 = new List<PictureBox>();
+        List<IMonster> enemies2 = new List<IMonster>();
+
+        List<PictureBox> pics = new List<PictureBox>();
+        List<IHero> hero = new List<IHero>();
+        IHero playerHero;
 
         Points current = new Points();
         Points stepUp = new Points();
@@ -37,6 +58,7 @@ namespace DisgustingLittleSillyScaryDungeon
         bool downStep = true;
         bool rightStep = true;
         bool leftStep = true;
+        bool buttonPress = false;
 
         public DisgustingLittleSillyScaryDungeon()
         {
@@ -314,9 +336,27 @@ namespace DisgustingLittleSillyScaryDungeon
             enemies.Add(point131);
             enemies.Add(point132);
 
+            enemies1.Add(pictureBox129);
+            enemies1.Add(pictureBox130);
+            enemies1.Add(pictureBox131);
+            enemies1.Add(pictureBox132);
+
+            enemies2.Add(this.fluffBun);
+            enemies2.Add(this.wasp);
+            enemies2.Add(this.bandit);
+            enemies2.Add(this.boss);
+
             pics.Add(pictureBox125);
             pics.Add(pictureBox126);
             pics.Add(pictureBox127);
+
+            hero.Add(this.warrior);
+            hero.Add(this.rogue);
+            hero.Add(this.mage);
+
+            artefacts1.Add(new Hammer());
+            artefacts1.Add(new Sword(SwordType.Diamond));
+            artefacts1.Add(new Shield());           
         }
 
         public void PossibleMovement()
@@ -422,7 +462,31 @@ namespace DisgustingLittleSillyScaryDungeon
                 if (enemies[i].XCoord == this.current.XCoord
                     && enemies[i].YCoord == this.current.YCoord)
                 {
-                    //Battle
+                    this.battlePanel.Visible = true;
+                    this.battlePanel.Enabled = true;
+                    this.battlePanel.Focus();
+
+                    this.emptyHealthBarPlayer.Width = this.playerHero.Health;
+
+                    this.emptyHealthBarEnemy.Width = this.enemies2[i].Health;
+
+                    while (this.playerHero.Health > 0 && this.enemies2[i].Health > 0)
+                    {
+                        this.enemies2[i].Health -= this.playerHero.Attack;
+                        this.playerHero.Health -= this.enemies2[i].MaxDamage;
+
+                        this.fullHealthBarEnemy.Width = this.enemies2[i].Health;
+                        Thread.Sleep(100);
+
+                        this.fullHealthBarPlayer.Width = this.playerHero.Health;
+                        Thread.Sleep(100);
+                    }
+
+                    enemies1[i].Left += 1000;
+                    enemies[i].XCoord += 1000;
+
+                    this.battlePanel.Visible = false;
+                    this.battlePanel.Enabled = false;
                 }
             }
 
@@ -434,6 +498,7 @@ namespace DisgustingLittleSillyScaryDungeon
                 {
                     visited[i] = true;
                     pics[i].Left += 1000;
+                    playerHero.GetAttackPoints(artefacts1[i]);
                     break;
                 }
             }
@@ -496,20 +561,33 @@ namespace DisgustingLittleSillyScaryDungeon
             if (this.radioButton1.Checked == true)
             {
                 this.player.Image = Resources._3;
+                this.playerHero = hero[0];
             }
 
             else if (this.radioButton2.Checked == true)
             {
                 this.player.Image = Resources._31;
+                this.playerHero = hero[1];
             }
 
             else
             {
                 this.player.Image = Resources._32;
+                this.playerHero = hero[2];
             }
 
             this.panel3.Visible = false;
             this.panel3.Enabled = false;
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void fullHealthBarPlayer_Resize(object sender, EventArgs e)
+        {
             
         }
     }

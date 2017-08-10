@@ -12,13 +12,12 @@ namespace DisgustingLittleSillyScaryDungeon.Characters.Monsters
     public class FluffyBunny : Monster
     {
 
-        public FluffyBunny(
-                    Position position, 
+        public FluffyBunny( 
                     int health = 25,
                     int maxDamage = 10,
                     int defence = 5, 
                     string battlecry = "Gimmie all your carrots") 
-                    : base(health, maxDamage, position, defence, battlecry)
+                    : base(health, maxDamage, defence, battlecry)
         {
             
         }

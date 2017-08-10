@@ -17,7 +17,7 @@ namespace DisgustingLittleSillyScaryDungeon.Characters.Monsters
         private int defence;
         private string battlecry;
 
-        public Monster(int health, int maxDamage, Position position, int defence, string battlecry)
+        public Monster(int health, int maxDamage, int defence, string battlecry)
         {
             this.Health = health;
             this.MaxDamage = maxDamage;

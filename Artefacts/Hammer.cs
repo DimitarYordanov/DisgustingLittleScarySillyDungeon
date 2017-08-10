@@ -8,7 +8,7 @@ namespace DisgustingLittleSillyScaryDungeon.Artefacts
 {
     class Hammer : Artefact
     {
-        public Hammer(int xCoord, int yCoord) : base(xCoord, yCoord)
+        public Hammer()
         {
         }
 

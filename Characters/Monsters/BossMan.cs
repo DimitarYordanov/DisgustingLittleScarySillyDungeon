@@ -13,12 +13,11 @@ namespace DisgustingLittleSillyScaryDungeon.Characters.Monsters
     {
 
         public BossMan(
-                Position position,
                 int health = 76,
                 int maxDamage = 25,
                 int defence = 10,
                 string battlecry = "You defeated all the stupid ones, now you face ME!")
-                : base(health, maxDamage, position, defence, battlecry)
+                : base(health, maxDamage, defence, battlecry)
         {
 
         }

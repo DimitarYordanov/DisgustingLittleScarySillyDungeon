@@ -1,4 +1,5 @@
-﻿using DisgustingLittleSillyScaryDungeon.Heroes.Contracts;
+﻿using DisgustingLittleSillyScaryDungeon.Artefacts;
+using DisgustingLittleSillyScaryDungeon.Heroes.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,12 +16,15 @@ namespace DisgustingLittleSillyScaryDungeon.Heroes.Models
         private int defense;
 
         //constructor
-        public Mage(int health, int strength, int intelligence, int agility, int fireball) : base(health, strength, intelligence, agility)
+        public Mage(int health, int strength, int intelligence, int agility)
+            : base(health, strength, intelligence, agility)
         {
-            this.Fireball = fireball;
-            this.Attack = GetAttackPoints() + this.Fireball;
-            this.Defense = GetDefencePoints();
+            this.Fireball = 5;
+            this.Attack = (strength / 3 + agility) / intelligence + this.fireball;
+            this.Defense = 2 * agility + strength / 2;          
         }
+
+        
 
         //properties
         public int Attack
@@ -50,5 +54,14 @@ namespace DisgustingLittleSillyScaryDungeon.Heroes.Models
             }
         }
 
+        public override void GetAttackPoints(Artefact artefact)
+        {
+            this.attack += (artefact.Strentgh / 3 + artefact.Agility) / artefact.Intelligence;
+
+        }
+        public override void GetDefencePoints(Artefact artefact)
+        {
+            this.defense += 2 * artefact.Agility + (artefact.Strentgh / 2);
+        }
     }
 }

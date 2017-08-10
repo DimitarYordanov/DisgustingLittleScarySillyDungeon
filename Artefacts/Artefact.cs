@@ -8,19 +8,9 @@ namespace DisgustingLittleSillyScaryDungeon.Artefacts
 {
     public abstract class Artefact
     {
-        public Artefact (int xCoord, int yCoord)
+        public Artefact ()
         {
-            this.XCoord = xCoord;
-            this.YCoord = yCoord;
-        }
 
-        public int XCoord
-        {
-            get; private set;
-        }
-        public int YCoord
-        {
-            get; private set;
         }
 
         public abstract int Strentgh

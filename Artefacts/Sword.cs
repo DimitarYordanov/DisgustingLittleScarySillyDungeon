@@ -9,10 +9,8 @@ namespace DisgustingLittleSillyScaryDungeon.Artefacts
     public class Sword : Artefact
     {
         private SwordType type;
-        private int xCoord;
-        private int yCoord;
 
-        public Sword(int xCoord, int yCoord, SwordType type) : base(xCoord, yCoord)
+        public Sword(SwordType type)
         {
             this.type = type;
         }
@@ -42,7 +40,7 @@ namespace DisgustingLittleSillyScaryDungeon.Artefacts
         {
             get
             {
-                return 0;
+                return 1;
             }
 
             set

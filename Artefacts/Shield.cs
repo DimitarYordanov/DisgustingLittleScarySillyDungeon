@@ -8,7 +8,7 @@ namespace DisgustingLittleSillyScaryDungeon.Artefacts
 {
     public class Shield : Artefact
     {
-        public Shield(int xCoord, int yCoord) : base(xCoord, yCoord)
+        public Shield()
         {
         }
 

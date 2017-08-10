@@ -8,7 +8,7 @@ namespace DisgustingLittleSillyScaryDungeon.Artefacts
 {
     public class Mace : Artefact
     {
-        public Mace(int xCoord, int yCoord) : base(xCoord, yCoord)
+        public Mace()
         {
         }
 

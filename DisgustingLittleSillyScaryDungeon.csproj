@@ -72,6 +72,9 @@
     <Compile Include="Models\Mage.cs" />
     <Compile Include="Models\Rogue.cs" />
     <Compile Include="Models\Warrior.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Positioning\Position.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,6 +83,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\DisgustingLittleSillyScaryDungeon.DisgustingLittleSillyScaryDungeon.resources" />
+    <EmbeddedResource Include="obj\Debug\DisgustingLittleSillyScaryDungeon.Properties.Resources.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -90,6 +95,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include=".vs\DisgustingLittleSillyScaryDungeon\v15\.suo" />
+    <None Include="bin\Debug\DisgustingLittleSillyScaryDungeon.exe.config" />
+    <None Include="obj\Debug\CoreCompileInputs.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\DisgustingLittleSillyScaryDungeon.csproj.GenerateResource.Cache" />
+    <None Include="obj\Debug\DisgustingLittleSillyScaryDungeon.csprojResolveAssemblyReference.cache" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -144,6 +156,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\DisgustingLittleSillyScaryDungeon.exe" />
+    <Content Include="bin\Debug\DisgustingLittleSillyScaryDungeon.pdb" />
+    <Content Include="DisgustingLittleSillyScaryDungeon\.gitignore" />
+    <Content Include="obj\Debug\DisgustingLittleSillyScaryDungeon.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\DisgustingLittleSillyScaryDungeon.exe" />
+    <Content Include="obj\Debug\DisgustingLittleSillyScaryDungeon.pdb" />
+    <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
