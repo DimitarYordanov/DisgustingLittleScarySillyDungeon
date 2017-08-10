@@ -25,7 +25,7 @@ namespace DisgustingLittleSillyScaryDungeon
         bool up;
         bool down;
 
-        Warrior warrior = new Warrior(100, 15, 10, 10);
+        Warrior warrior = new Warrior(100, 15, 5, 10);
         Rogue rogue = new Rogue(100, 10, 10, 15);
         Mage mage = new Mage(100, 10, 15, 10);
 
@@ -364,6 +364,24 @@ namespace DisgustingLittleSillyScaryDungeon
             this.current.XCoord = this.player.Location.X;
             this.current.YCoord = this.player.Location.Y;
 
+            try
+            {
+                for (int i = 0; i < obstacles.Count; i++)
+                {
+                    if (obstacles[i].XCoord == current.XCoord
+                        && obstacles[i].YCoord == current.YCoord)
+                    {
+                        Exception dontCheat = new Exception("Do not cheat!");
+                        throw dontCheat;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                this.player.Left = 0;
+                this.player.Top = 649;
+            }
+            
             this.stepUp.XCoord = this.current.XCoord;
             this.stepUp.YCoord = this.current.YCoord - 54;
             for (int i = 0; i < obstacles.Count; i++)
@@ -462,66 +480,36 @@ namespace DisgustingLittleSillyScaryDungeon
                 if (enemies[i].XCoord == this.current.XCoord
                     && enemies[i].YCoord == this.current.YCoord)
                 {
-
-                    if (enemies1[i] == pictureBox129)
-                    {
-                        this.pictureBox134.Image = Resources._10;
-                    }
-
-                    if (enemies1[i] == pictureBox130)
-                    {
-                        this.pictureBox134.Image = Resources._11;
-                    }
-
-                    if (enemies1[i] == pictureBox131)
-                    {
-                        this.pictureBox134.Image = Resources._12;
-                    }
-
-                    if (enemies1[i] == pictureBox132)
-                    {
-                        this.pictureBox134.Image = Resources._13;
-                    }
+                    this.pictureBox134.Image = enemies1[i].Image;
+                    this.pictureBox133.Image = player.Image;
 
                     this.battlePanel.Visible = true;
                     this.battlePanel.Enabled = true;
                     this.battlePanel.Focus();
                     Thread.Sleep(2000);
 
-                    
+                    this.playerHealthBar.Value = this.playerHero.Health;
+                    this.playerHealthBar.Focus();
 
-                    this.fullHealthBarPlayer.Width = this.playerHero.Health;
-                    this.emptyHealthBarPlayer.Width = this.playerHero.Health;
+                    this.enemyHealthBar.Value = this.enemies2[i].Health;
+                    this.enemyHealthBar.Focus();
 
-                    this.fullHealthBarEnemy.Width = this.enemies2[i].Health;
-                    this.emptyHealthBarEnemy.Width = this.enemies2[i].Health;
-
-
-                    while (this.fullHealthBarEnemy.Width > 0 && fullHealthBarPlayer.Width > 0)
+                    while (this.enemyHealthBar.Value > 0 && this.playerHealthBar.Value > 0)
                     {
-                        //this.enemies2[i].Health -= 10;
-
-                        
-
-                        this.fullHealthBarEnemy.Width -= 10;
+                        this.enemyHealthBar.Value -= playerHero.Attack;
+                        this.enemyHealthBar.Focus();
                         Thread.Sleep(500);
 
-                        this.fullHealthBarPlayer.Width -= 10;
-                        Thread.Sleep(500);
-
-                        
+                        this.playerHealthBar.Value -= enemies2[i].MaxDamage;
+                        this.playerHealthBar.Focus();
+                        Thread.Sleep(500);   
                     }
-
-                    this.fullHealthBarPlayer.Width = this.playerHero.Health;
-                    this.emptyHealthBarPlayer.Width = this.playerHero.Health;
 
                     this.battlePanel.Visible = false;
                     this.battlePanel.Enabled = false;
 
                     enemies1[i].Left += 1000;
-                    enemies[i].XCoord += 1000;
-
-                    
+                    enemies[i].XCoord += 1000;    
                 }
             }
 
@@ -534,6 +522,7 @@ namespace DisgustingLittleSillyScaryDungeon
                     visited[i] = true;
                     pics[i].Left += 1000;
                     playerHero.GetAttackPoints(artefacts1[i]);
+                    playerHero.GetDefencePoints(artefacts1[i]);
                     break;
                 }
             }
