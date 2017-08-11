@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DisgustingLittleSillyScaryDungeon.Interfaces;
-using DisgustingLittleSillyScaryDungeon.Positioning;
+using DisgustingLittleSillyScaryDungeon.Contracts.Monsters;
+using DisgustingLittleSillyScaryDungeon.Common.Positioning;
 using DisgustingLittleSillyScaryDungeon.Common.Enums;
 
 namespace DisgustingLittleSillyScaryDungeon.Characters.Monsters
 {
-    public class BossMan : Monster
+    public class BossMan : Monster, IBoss
     {
 
         public BossMan(
                 int health = 76,
-                int maxDamage = 25,
-                int defence = 10,
+                int attack = 25,
+                int defense = 10,
                 string battlecry = "You defeated all the stupid ones, now you face ME!")
-                : base(health, maxDamage, defence, battlecry)
+                : base(health, attack, defense, battlecry)
         {
 
         }
@@ -30,10 +30,11 @@ namespace DisgustingLittleSillyScaryDungeon.Characters.Monsters
             }
         }
 
-        public override string ToString()
+        public void Scare()
         {
-            return string.Format("Fluffy Bunny\nHealth: {0}\nDamage: {1}\nDefence: {2}\nPlace: {3}\nBattlecry: {4}",
-                this.Health, this.MaxDamage, this.Defence, this.Position, this.Battlecry);
+            //Scare the player
+            //Obviously not implemented
         }
+
     }
 }

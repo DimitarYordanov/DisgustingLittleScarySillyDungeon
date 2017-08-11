@@ -1,23 +1,26 @@
 ﻿using DisgustingLittleSillyScaryDungeon.Artefacts;
-using DisgustingLittleSillyScaryDungeon.Heroes.Contracts;
+using DisgustingLittleSillyScaryDungeon.Contracts.PlayerCharacters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DisgustingLittleSillyScaryDungeon.Contracts;
 
-namespace DisgustingLittleSillyScaryDungeon.Heroes
+namespace DisgustingLittleSillyScaryDungeon.Characters.PlayerCharacters
 {
-    public abstract class Character
+    public abstract class Hero : IHero
     {
         //fields
         private int health;
+        private int attack;
+        private int defense;
         private int strength;
         private int intelligence;
         private int agility;
 
         //constructor
-        public Character(int health, int strength, int intelligence, int agility)
+        public Hero(int health, int strength, int intelligence, int agility)
         {
             this.Health = health;
             this.Strength = strength;
@@ -35,6 +38,24 @@ namespace DisgustingLittleSillyScaryDungeon.Heroes
             set
             {
                 this.health = value;
+            }
+        }
+
+        public int Attack
+        {
+            get { return this.attack; }
+            protected set
+            {
+                this.attack = value;
+            }
+        }
+
+        public int Defense
+        {
+            get { return this.defense; }
+            protected set
+            {
+                this.defense = value;
             }
         }
 

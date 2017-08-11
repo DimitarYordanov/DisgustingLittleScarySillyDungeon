@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DisgustingLittleSillyScaryDungeon.Artefacts
+namespace DisgustingLittleSillyScaryDungeon.Contracts.Monsters
 {
-    public enum SwordType
+    public interface IBunny
     {
-        Iron = 1,
-        Gold = 2,
-        Diamond = 3
+        void Hide();
     }
 }

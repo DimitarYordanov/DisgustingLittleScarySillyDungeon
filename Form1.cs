@@ -1,20 +1,14 @@
-﻿using DisgustingLittleSillyScaryDungeon.Util;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DisgustingLittleSillyScaryDungeon.Properties;
-using DisgustingLittleSillyScaryDungeon.Heroes.Models;
-using DisgustingLittleSillyScaryDungeon.Heroes.Contracts;
 using DisgustingLittleSillyScaryDungeon.Artefacts;
-using DisgustingLittleSillyScaryDungeon.Interfaces;
 using DisgustingLittleSillyScaryDungeon.Characters.Monsters;
+using DisgustingLittleSillyScaryDungeon.Characters.PlayerCharacters;
+using DisgustingLittleSillyScaryDungeon.Common.Enums;
+using DisgustingLittleSillyScaryDungeon.Common.Positioning;
+using DisgustingLittleSillyScaryDungeon.Contracts.PlayerCharacters;
+using DisgustingLittleSillyScaryDungeon.Properties;
 
 namespace DisgustingLittleSillyScaryDungeon
 {
@@ -31,7 +25,7 @@ namespace DisgustingLittleSillyScaryDungeon
 
         FluffyBunny fluffBun = new FluffyBunny();
         RuthlessWasp wasp = new RuthlessWasp();
-        Bandit bandit = new Bandit();
+        YoungBandit bandit = new YoungBandit();
         BossMan boss = new BossMan();
 
         List<IPoints> obstacles = new List<IPoints>();
@@ -39,9 +33,9 @@ namespace DisgustingLittleSillyScaryDungeon
         List<Artefact> artefacts1 = new List<Artefact>();
         List<bool> visited = new List<bool>();
 
-        List<IPoints> enemies = new List<IPoints>();
-        List<PictureBox> enemies1 = new List<PictureBox>();
-        List<IMonster> enemies2 = new List<IMonster>();
+        List<IPoints> enemiesPosition = new List<IPoints>();
+        List<PictureBox> enemiesPictureBox = new List<PictureBox>();
+        List<Monster> enemiesInstances = new List<Monster>();
 
         List<PictureBox> pics = new List<PictureBox>();
         List<IHero> hero = new List<IHero>();
@@ -58,8 +52,7 @@ namespace DisgustingLittleSillyScaryDungeon
         bool downStep = true;
         bool rightStep = true;
         bool leftStep = true;
-        bool buttonPress = false;
-
+        
         public DisgustingLittleSillyScaryDungeon()
         {
             InitializeComponent();
@@ -331,20 +324,20 @@ namespace DisgustingLittleSillyScaryDungeon
             Points point131 = new Points(this.pictureBox131.Location.X, this.pictureBox131.Location.Y);
             Points point132 = new Points(this.pictureBox132.Location.X, this.pictureBox132.Location.Y);
 
-            enemies.Add(point129);
-            enemies.Add(point130);
-            enemies.Add(point131);
-            enemies.Add(point132);
+            enemiesPosition.Add(point129);
+            enemiesPosition.Add(point130);
+            enemiesPosition.Add(point131);
+            enemiesPosition.Add(point132);
 
-            enemies1.Add(pictureBox129);
-            enemies1.Add(pictureBox130);
-            enemies1.Add(pictureBox131);
-            enemies1.Add(pictureBox132);
+            enemiesPictureBox.Add(pictureBox129);
+            enemiesPictureBox.Add(pictureBox130);
+            enemiesPictureBox.Add(pictureBox131);
+            enemiesPictureBox.Add(pictureBox132);
 
-            enemies2.Add(this.fluffBun);
-            enemies2.Add(this.wasp);
-            enemies2.Add(this.bandit);
-            enemies2.Add(this.boss);
+            enemiesInstances.Add(this.fluffBun);
+            enemiesInstances.Add(this.wasp);
+            enemiesInstances.Add(this.bandit);
+            enemiesInstances.Add(this.boss);
 
             pics.Add(pictureBox125);
             pics.Add(pictureBox126);
@@ -356,7 +349,10 @@ namespace DisgustingLittleSillyScaryDungeon
 
             artefacts1.Add(new Hammer());
             artefacts1.Add(new Sword(SwordType.Diamond));
-            artefacts1.Add(new Shield());           
+            artefacts1.Add(new Shield());
+
+            this.cheaterPanel.Enabled = false;
+            this.cheaterPanel.Visible = false;
         }
 
         public void PossibleMovement()
@@ -371,15 +367,30 @@ namespace DisgustingLittleSillyScaryDungeon
                     if (obstacles[i].XCoord == current.XCoord
                         && obstacles[i].YCoord == current.YCoord)
                     {
-                        Exception dontCheat = new Exception("Do not cheat!");
+                        Exception dontCheat = new ArgumentOutOfRangeException("Do not cheat!");
                         throw dontCheat;
                     }
                 }
             }
-            catch (Exception)
+            catch (ArgumentOutOfRangeException)
             {
+                this.cheaterPanel.Visible = true;
+                this.cheaterPanel.Enabled = true;
+                this.cheaterPanel.Focus();
+                this.cheaterBar.Visible = true;
+                this.cheaterBar.Enabled = true;
+                this.cheaterBar.Text = "Cheater!!!";
+                this.cheaterBar.Focus();
+
+                Thread.Sleep(3000);
+
                 this.player.Left = 0;
                 this.player.Top = 649;
+
+                this.cheaterBar.Enabled = false;
+                this.cheaterBar.Visible = false;
+                this.cheaterPanel.Enabled = false;
+                this.cheaterPanel.Visible = false;
             }
             
             this.stepUp.XCoord = this.current.XCoord;
@@ -475,41 +486,73 @@ namespace DisgustingLittleSillyScaryDungeon
                 player.Top += 54;
             }
 
-            for (int i = 0; i < enemies.Count; i++)
+            for (int i = 0; i < enemiesPosition.Count; i++)
             {
-                if (enemies[i].XCoord == this.current.XCoord
-                    && enemies[i].YCoord == this.current.YCoord)
+                if (enemiesPosition[i].XCoord == this.current.XCoord
+                    && enemiesPosition[i].YCoord == this.current.YCoord)
                 {
-                    this.pictureBox134.Image = enemies1[i].Image;
+                    this.pictureBox134.Image = enemiesPictureBox[i].Image;
                     this.pictureBox133.Image = player.Image;
 
                     this.battlePanel.Visible = true;
                     this.battlePanel.Enabled = true;
                     this.battlePanel.Focus();
+                    
+                    this.battlecryBox.Visible = true;
+                    this.battlecryBox.Text = enemiesInstances[i].Type + ": " + enemiesInstances[i].ToString();
                     Thread.Sleep(2000);
 
                     this.playerHealthBar.Value = this.playerHero.Health;
-                    this.playerHealthBar.Focus();
 
-                    this.enemyHealthBar.Value = this.enemies2[i].Health;
+                    this.enemyHealthBar.Value = this.enemiesInstances[i].Health;
                     this.enemyHealthBar.Focus();
-
                     while (this.enemyHealthBar.Value > 0 && this.playerHealthBar.Value > 0)
                     {
+                        this.battlecryBox.Focus();
                         this.enemyHealthBar.Value -= playerHero.Attack;
                         this.enemyHealthBar.Focus();
                         Thread.Sleep(500);
 
-                        this.playerHealthBar.Value -= enemies2[i].MaxDamage;
+                        this.battlecryBox.Focus();
+                        if (this.enemyHealthBar.Value < 1)
+                        {
+                            break;
+                        }
+                        
+                        this.playerHealthBar.Value -= enemiesInstances[i].Attack;
                         this.playerHealthBar.Focus();
-                        Thread.Sleep(500);   
+                        Thread.Sleep(500);
+                        if (this.playerHealthBar.Value < 1)
+                        {
+                            this.cheaterPanel.Visible = true;
+                            this.cheaterPanel.Enabled = true;
+                            this.cheaterPanel.Focus();
+                            this.cheaterBar.Visible = true;
+                            this.cheaterBar.Enabled = true;
+                            this.cheaterBar.Text = "You are BAD, but I'll let you live... Pathetic";
+                            this.cheaterBar.Focus();
+
+                            Thread.Sleep(5000);
+
+                            this.player.Left = 0;
+                            this.player.Top = 649;
+
+                            this.cheaterBar.Enabled = false;
+                            this.cheaterBar.Visible = false;
+                            this.cheaterPanel.Enabled = false;
+                            this.cheaterPanel.Visible = false;
+                        }
                     }
+
+                    this.battlecryBox.Clear();
+                    this.playerHealthBar.ResetText();
+                    this.enemyHealthBar.ResetText();
 
                     this.battlePanel.Visible = false;
                     this.battlePanel.Enabled = false;
 
-                    enemies1[i].Left += 1000;
-                    enemies[i].XCoord += 1000;    
+                    enemiesPictureBox[i].Left += 1000;
+                    enemiesPosition[i].XCoord += 1000;    
                 }
             }
 

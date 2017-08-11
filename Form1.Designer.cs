@@ -32,6 +32,9 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.battlePanel = new System.Windows.Forms.Panel();
+            this.battlecryBox = new System.Windows.Forms.TextBox();
+            this.enemyHealthBar = new System.Windows.Forms.NumericUpDown();
+            this.playerHealthBar = new System.Windows.Forms.NumericUpDown();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox134 = new System.Windows.Forms.PictureBox();
             this.pictureBox133 = new System.Windows.Forms.PictureBox();
@@ -174,10 +177,12 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.playerHealthBar = new System.Windows.Forms.NumericUpDown();
-            this.enemyHealthBar = new System.Windows.Forms.NumericUpDown();
+            this.cheaterBar = new System.Windows.Forms.TextBox();
+            this.cheaterPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.battlePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.enemyHealthBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerHealthBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox134)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox133)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
@@ -315,8 +320,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerHealthBar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemyHealthBar)).BeginInit();
+            this.cheaterPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -327,6 +331,7 @@
             // panel1
             // 
             this.panel1.BackgroundImage = global::DisgustingLittleSillyScaryDungeon.Properties.Resources._2;
+            this.panel1.Controls.Add(this.cheaterPanel);
             this.panel1.Controls.Add(this.battlePanel);
             this.panel1.Controls.Add(this.player);
             this.panel1.Controls.Add(this.pictureBox132);
@@ -470,6 +475,7 @@
             // 
             // battlePanel
             // 
+            this.battlePanel.Controls.Add(this.battlecryBox);
             this.battlePanel.Controls.Add(this.enemyHealthBar);
             this.battlePanel.Controls.Add(this.playerHealthBar);
             this.battlePanel.Controls.Add(this.button2);
@@ -481,6 +487,47 @@
             this.battlePanel.Size = new System.Drawing.Size(320, 320);
             this.battlePanel.TabIndex = 136;
             this.battlePanel.Visible = false;
+            // 
+            // battlecryBox
+            // 
+            this.battlecryBox.Location = new System.Drawing.Point(24, 130);
+            this.battlecryBox.Name = "battlecryBox";
+            this.battlecryBox.Size = new System.Drawing.Size(276, 20);
+            this.battlecryBox.TabIndex = 145;
+            // 
+            // enemyHealthBar
+            // 
+            this.enemyHealthBar.Location = new System.Drawing.Point(236, 11);
+            this.enemyHealthBar.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.enemyHealthBar.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.enemyHealthBar.Name = "enemyHealthBar";
+            this.enemyHealthBar.Size = new System.Drawing.Size(81, 20);
+            this.enemyHealthBar.TabIndex = 144;
+            // 
+            // playerHealthBar
+            // 
+            this.playerHealthBar.Location = new System.Drawing.Point(4, 237);
+            this.playerHealthBar.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.playerHealthBar.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.playerHealthBar.Name = "playerHealthBar";
+            this.playerHealthBar.Size = new System.Drawing.Size(81, 20);
+            this.playerHealthBar.TabIndex = 143;
             // 
             // button2
             // 
@@ -1904,39 +1951,21 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // playerHealthBar
+            // cheaterBar
             // 
-            this.playerHealthBar.Location = new System.Drawing.Point(4, 237);
-            this.playerHealthBar.Maximum = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
-            this.playerHealthBar.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.playerHealthBar.Name = "playerHealthBar";
-            this.playerHealthBar.Size = new System.Drawing.Size(81, 20);
-            this.playerHealthBar.TabIndex = 143;
+            this.cheaterBar.Location = new System.Drawing.Point(6, 7);
+            this.cheaterBar.Name = "cheaterBar";
+            this.cheaterBar.Size = new System.Drawing.Size(326, 20);
+            this.cheaterBar.TabIndex = 137;
+            this.cheaterBar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // enemyHealthBar
+            // cheaterPanel
             // 
-            this.enemyHealthBar.Location = new System.Drawing.Point(236, 11);
-            this.enemyHealthBar.Maximum = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
-            this.enemyHealthBar.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.enemyHealthBar.Name = "enemyHealthBar";
-            this.enemyHealthBar.Size = new System.Drawing.Size(81, 20);
-            this.enemyHealthBar.TabIndex = 144;
+            this.cheaterPanel.Controls.Add(this.cheaterBar);
+            this.cheaterPanel.Location = new System.Drawing.Point(370, 102);
+            this.cheaterPanel.Name = "cheaterPanel";
+            this.cheaterPanel.Size = new System.Drawing.Size(341, 37);
+            this.cheaterPanel.TabIndex = 138;
             // 
             // DisgustingLittleSillyScaryDungeon
             // 
@@ -1952,6 +1981,9 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DisgustingLittleSillyScaryDungeon_KeyUp);
             this.panel1.ResumeLayout(false);
             this.battlePanel.ResumeLayout(false);
+            this.battlePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.enemyHealthBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerHealthBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox134)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox133)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
@@ -2090,8 +2122,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerHealthBar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemyHealthBar)).EndInit();
+            this.cheaterPanel.ResumeLayout(false);
+            this.cheaterPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2245,6 +2277,9 @@
         private System.Windows.Forms.PictureBox pictureBox133;
         public System.Windows.Forms.NumericUpDown enemyHealthBar;
         public System.Windows.Forms.NumericUpDown playerHealthBar;
+        private System.Windows.Forms.TextBox battlecryBox;
+        private System.Windows.Forms.TextBox cheaterBar;
+        private System.Windows.Forms.Panel cheaterPanel;
     }
 }
 

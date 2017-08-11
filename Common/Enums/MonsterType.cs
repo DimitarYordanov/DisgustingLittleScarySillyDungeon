@@ -2,9 +2,9 @@
 {
     public enum MonsterType
     {
-        FluffyBunny,
-        RuthlessWasp,
-        Bandit,
-        BossMan
+        FluffyBunny = 0,
+        RuthlessWasp = 1,
+        YoungBandit = 2,
+        BossMan = 3
     }
 }

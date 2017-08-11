@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DisgustingLittleSillyScaryDungeon.Heroes.Contracts
+namespace DisgustingLittleSillyScaryDungeon.Contracts.Monsters
 {
-    public interface IRougue : IHero
+    public interface IWasp
     {
-        bool Cloak { get; set; }
+        void Sting();
     }
 }

@@ -8,11 +8,7 @@ namespace DisgustingLittleSillyScaryDungeon.Artefacts
 {
     public class Shield : Artefact
     {
-        public Shield()
-        {
-        }
-
-        public override int Strentgh
+        public override int Strength
         {
             get
             {

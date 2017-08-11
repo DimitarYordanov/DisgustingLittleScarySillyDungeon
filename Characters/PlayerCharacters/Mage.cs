@@ -1,19 +1,17 @@
 ﻿using DisgustingLittleSillyScaryDungeon.Artefacts;
-using DisgustingLittleSillyScaryDungeon.Heroes.Contracts;
+using DisgustingLittleSillyScaryDungeon.Contracts.PlayerCharacters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DisgustingLittleSillyScaryDungeon.Heroes.Models
+namespace DisgustingLittleSillyScaryDungeon.Characters.PlayerCharacters
 {
-    public class Mage : Character, IMage
+    public class Mage : Hero, IMage
     {
         //fields
         private int fireball;
-        private int attack;
-        private int defense;
 
         //constructor
         public Mage(int health, int strength, int intelligence, int agility)
@@ -27,23 +25,6 @@ namespace DisgustingLittleSillyScaryDungeon.Heroes.Models
         
 
         //properties
-        public int Attack
-        {
-            get { return this.attack; }
-            private set
-            {
-                this.attack = value;
-            }
-        }
-
-        public int Defense
-        {
-            get { return this.defense; }
-            private set
-            {
-                this.defense = value;
-            }
-        }
 
         public int Fireball
         {
@@ -56,12 +37,12 @@ namespace DisgustingLittleSillyScaryDungeon.Heroes.Models
 
         public override void GetAttackPoints(Artefact artefact)
         {
-            this.attack += (artefact.Strentgh / 3 + artefact.Agility) / artefact.Intelligence;
+            this.Attack += (artefact.Strength / 3 + artefact.Agility) / artefact.Intelligence;
 
         }
         public override void GetDefencePoints(Artefact artefact)
         {
-            this.defense += 2 * artefact.Agility + (artefact.Strentgh / 2);
+            this.Defense += 2 * artefact.Agility + (artefact.Strength / 2);
         }
     }
 }

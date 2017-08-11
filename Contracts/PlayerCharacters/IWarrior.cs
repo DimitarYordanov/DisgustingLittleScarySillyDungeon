@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DisgustingLittleSillyScaryDungeon.Heroes.Contracts
+namespace DisgustingLittleSillyScaryDungeon.Contracts.PlayerCharacters
 {
     public interface IWarrior : IHero
     {

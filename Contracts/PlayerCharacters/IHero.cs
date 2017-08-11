@@ -4,17 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DisgustingLittleSillyScaryDungeon.Contracts;
 
-namespace DisgustingLittleSillyScaryDungeon.Heroes.Contracts
+namespace DisgustingLittleSillyScaryDungeon.Contracts.PlayerCharacters
 {
-    public interface IHero
+    public interface IHero : ICharacter
     {
-        int Attack { get; }
-
-        int Defense { get; }
-
-        int Health { get; set; }
-
         void GetAttackPoints(Artefact artefact);
 
         void GetDefencePoints(Artefact artefact);

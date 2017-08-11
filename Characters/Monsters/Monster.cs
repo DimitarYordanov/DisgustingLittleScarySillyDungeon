@@ -3,30 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DisgustingLittleSillyScaryDungeon.Interfaces;
-using DisgustingLittleSillyScaryDungeon.Positioning;
+using DisgustingLittleSillyScaryDungeon.Common.Positioning;
 using DisgustingLittleSillyScaryDungeon.Common.Enums;
+using DisgustingLittleSillyScaryDungeon.Contracts.Monsters;
+using DisgustingLittleSillyScaryDungeon.Contracts.PlayerCharacters;
 
 namespace DisgustingLittleSillyScaryDungeon.Characters.Monsters
 {
     public abstract class Monster : IMonster
     {
         private int health;
-        private int maxDamage;
-        private Position position;
-        private int defence;
+        private int attack;
+        private int defense;
+        private Points position;
         private string battlecry;
 
-        public Monster(int health, int maxDamage, int defence, string battlecry)
+        public Monster(int health, int attack, int defense, string battlecry)
         {
             this.Health = health;
-            this.MaxDamage = maxDamage;
-            this.Defence = defence;
+            this.Attack = attack;
+            this.Defense = defense;
             this.Position = position;
             this.Battlecry = battlecry;
         }
 
         public abstract MonsterType Type { get; }
+
         public int Health {
             get
             {
@@ -38,19 +40,33 @@ namespace DisgustingLittleSillyScaryDungeon.Characters.Monsters
             }
 
         }
-        public int MaxDamage
+
+        public int Attack
         {
             get
             {
-                return this.maxDamage;
+                return this.attack;
             }
-                 set
+            protected   set
             {
-                this.maxDamage = value;
+                this.attack = value;
             }
 
         }
-        public Position Position
+
+        public int Defense
+        {
+            get
+            {
+                return this.defense;
+            }
+            protected set
+            {
+                this.defense = value;
+            }
+        }
+
+        public Points Position
         {
             get
             {
@@ -61,17 +77,9 @@ namespace DisgustingLittleSillyScaryDungeon.Characters.Monsters
                 this.position = value;
             }
         }
-        public int Defence
-        {
-            get
-            {
-                return this.defence;
-            }
-            set
-            {
-                this.defence = value;
-            }
-        }
+
+        
+
         public string Battlecry
         {
             get
@@ -86,26 +94,19 @@ namespace DisgustingLittleSillyScaryDungeon.Characters.Monsters
         }
         
 
-        public void Attack()
+        public void AttackMove(IHero target)
         {
-            int rnd = Guid.NewGuid().GetHashCode();
-            //return Math.Abs(rnd % this.MaxDamage);
-        }
-
-        //public void Attack(Character character)
-        //{
         //    int rnd = Guid.NewGuid().GetHashCode();
         //    int damageDone = rnd % this.MaxDamage - Character.Defence;
         //    if (damageDone > 0)
         //    {
         //        character.Health -= damageDone;
         //    }
-        //}
-
+        }
+        
         public override string ToString()
         {
-            return string.Format("{0}\nHealth: {1}\nDamage: {2}\nDefence: {3}\nPlace: {4}\nBattlecry: {5}",
-               this.Type, this.Health, this.MaxDamage, this.Defence, this.Position, this.Battlecry);
+            return this.Battlecry;
         }
     }
 }

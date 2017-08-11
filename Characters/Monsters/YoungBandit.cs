@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DisgustingLittleSillyScaryDungeon.Interfaces;
-using DisgustingLittleSillyScaryDungeon.Positioning;
+using DisgustingLittleSillyScaryDungeon.Contracts.Monsters;
+using DisgustingLittleSillyScaryDungeon.Common.Positioning;
 using DisgustingLittleSillyScaryDungeon.Common.Enums;
 
 namespace DisgustingLittleSillyScaryDungeon.Characters.Monsters
 {
-    public class Bandit : Monster
+    public class YoungBandit : Monster, IBandit
     {
-        public Bandit(
+        public YoungBandit(
                     int health = 45,
-                    int maxDamage = 20,
+                    int attack = 20,
                     int defence = 10,
                     string battlecry = "Your gold is mine, pup!")
-            : base(health, maxDamage, defence, battlecry)
+            : base(health, attack, defence, battlecry)
         {
 
         }
@@ -25,13 +25,14 @@ namespace DisgustingLittleSillyScaryDungeon.Characters.Monsters
         {
             get
             {
-                return MonsterType.Bandit;
+                return MonsterType.YoungBandit;
             }
         }
-        
-        public void Scare()
-        {
 
+        public void GoldSteal()
+        {
+            //steal Player's gold
+            //Obviously not impremented
         }
     }
 }

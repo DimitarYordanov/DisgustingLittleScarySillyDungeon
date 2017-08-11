@@ -8,11 +8,7 @@ namespace DisgustingLittleSillyScaryDungeon.Artefacts
 {
     class Hammer : Artefact
     {
-        public Hammer()
-        {
-        }
-
-        public override int Strentgh
+        public override int Strength
         {
             get
             {
@@ -22,7 +18,6 @@ namespace DisgustingLittleSillyScaryDungeon.Artefacts
             {
             }
         }
-
         public override int Agility
         {
             get
@@ -33,7 +28,6 @@ namespace DisgustingLittleSillyScaryDungeon.Artefacts
             {
             }
         }
-
         public override int Intelligence
         {
             get

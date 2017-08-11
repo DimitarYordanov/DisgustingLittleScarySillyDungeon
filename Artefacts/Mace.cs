@@ -8,11 +8,7 @@ namespace DisgustingLittleSillyScaryDungeon.Artefacts
 {
     public class Mace : Artefact
     {
-        public Mace()
-        {
-        }
-
-        public override int Strentgh
+        public override int Strength
         {
             get
             {
@@ -23,7 +19,6 @@ namespace DisgustingLittleSillyScaryDungeon.Artefacts
 
             }
         }
-
         public override int Agility
         {
             get
@@ -35,7 +30,6 @@ namespace DisgustingLittleSillyScaryDungeon.Artefacts
 
             }
         }
-
         public override int Intelligence
         {
             get

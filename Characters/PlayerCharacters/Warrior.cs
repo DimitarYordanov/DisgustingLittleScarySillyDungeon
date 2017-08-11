@@ -1,19 +1,18 @@
 ﻿using DisgustingLittleSillyScaryDungeon.Artefacts;
-using DisgustingLittleSillyScaryDungeon.Heroes.Contracts;
+using DisgustingLittleSillyScaryDungeon.Contracts.PlayerCharacters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DisgustingLittleSillyScaryDungeon.Heroes.Models
+namespace DisgustingLittleSillyScaryDungeon.Characters.PlayerCharacters
 {
-    public class Warrior : Character, IWarrior
+    public class Warrior : Hero, IWarrior
     {
         //fields
         private int extraHealth;
-        private int attack;
-        private int defense;
+        
 
         //constructor
         public Warrior(int health, int strength, int intelligence, int agility)
@@ -35,33 +34,15 @@ namespace DisgustingLittleSillyScaryDungeon.Heroes.Models
                 this.extraHealth = value;
             }       
         }
-
-        public int Attack
-        {
-            get { return this.attack; }
-            private set
-            {
-                this.attack = value;
-            }
-        }
-
-        public int Defense
-        {
-            get { return this.defense; }
-            private set
-            {
-                this.defense = value;
-            }
-        }
-
+        
         public override void GetAttackPoints(Artefact artefact)
         {
-            this.attack += (artefact.Strentgh + artefact.Agility) / artefact.Intelligence;
+            this.Attack += (artefact.Strength + artefact.Agility) / artefact.Intelligence;
             
         }
         public override void GetDefencePoints(Artefact artefact)
         {
-           this.defense += artefact.Agility + (artefact.Strentgh / 2);
+           this.Defense += artefact.Agility + (artefact.Strength / 2);
         }
     }
 }

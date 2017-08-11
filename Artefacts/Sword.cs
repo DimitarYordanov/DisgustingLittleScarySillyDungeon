@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DisgustingLittleSillyScaryDungeon.Common.Enums;
 
 namespace DisgustingLittleSillyScaryDungeon.Artefacts
 {
@@ -15,7 +11,7 @@ namespace DisgustingLittleSillyScaryDungeon.Artefacts
             this.type = type;
         }
 
-        public override int Strentgh
+        public override int Strength
         {
             get
             {

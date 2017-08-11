@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DisgustingLittleSillyScaryDungeon.Heroes.Contracts
+namespace DisgustingLittleSillyScaryDungeon.Contracts.Monsters
 {
-    public interface IMage: IHero
+    public interface IBandit
     {
-        int Fireball { get; set; }
+        void GoldSteal();
     }
 }
